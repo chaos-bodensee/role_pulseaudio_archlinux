@@ -1,0 +1,26 @@
+---
+
+- name: Install pulseaudio
+  pacman:
+    name:
+    - pulseaudio
+    - pulseaudio-equalizer
+    - pulseaudio-jack
+    - pulseaudio-bluetooth
+    - pasystray
+    - pulsemixer
+    - ponymix
+    state: latest
+    update_cache: yes
+    become: yes
+
+- name: Install bluetoth support
+  pacman:
+    name: 
+    - bluez
+    - bluez-utils
+    state: latest
+    update_cache: yes
+    become: yes
+
+
