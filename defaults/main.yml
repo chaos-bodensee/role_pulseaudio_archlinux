@@ -1,0 +1,10 @@
+
+pulseaudio_default_packages:
+    - pulseaudio
+    - pulseaudio-equalizer
+    - pulseaudio-jack
+    - pulseaudio-bluetooth
+    - pavucontrol-qt
+    - pulsemixer
+    - ponymix
+

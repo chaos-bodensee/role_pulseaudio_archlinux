@@ -2,17 +2,10 @@
 
 - name: Install pulseaudio
   pacman:
-    name:
-    - pulseaudio
-    - pulseaudio-equalizer
-    - pulseaudio-jack
-    - pulseaudio-bluetooth
-    - pasystray
-    - pulsemixer
-    - ponymix
+    name: "{{ pulseaudio_default_packages }}"
     state: latest
     update_cache: yes
-    become: yes
+  become: yes
 
 - name: Install bluetoth support
   pacman:
@@ -21,6 +14,6 @@
     - bluez-utils
     state: latest
     update_cache: yes
-    become: yes
+  become: yes
 
 
