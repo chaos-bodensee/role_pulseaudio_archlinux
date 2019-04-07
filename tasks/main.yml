@@ -1,19 +1,21 @@
 ---
 
 - name: Install pulseaudio
+  become: true
   pacman:
     name: "{{ pulseaudio_default_packages }}"
     state: latest
     update_cache: yes
-  become: yes
+  when: ansible_distribution == 'Archlinux'
 
 - name: Install bluetoth support
+  become: true
   pacman:
     name: 
-    - bluez
-    - bluez-utils
+      - bluez
+      - bluez-utils
     state: latest
     update_cache: yes
-  become: yes
+  when: ansible_distribution == 'Archlinux'
 
 
