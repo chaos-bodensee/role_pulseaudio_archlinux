@@ -1,0 +1,14 @@
+---
+# packages for your OS
+pulseaudio_os_packages:
+    - pulseaudio
+    - pulseaudio-equalizer
+    - pulseaudio-jack
+    - pulseaudio-bluetooth
+    - pavucontrol-qt
+    - pulsemixer
+    - ponymix
+
+bluetooth_os_packages:
+    - bluez
+    - bluez-utils

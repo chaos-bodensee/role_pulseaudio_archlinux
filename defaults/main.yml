@@ -1,10 +1,14 @@
+---
+# version check for this playbook
+submodules_versioncheck: true
 
-pulseaudio_default_packages:
-    - pulseaudio
-    - pulseaudio-equalizer
-    - pulseaudio-jack
-    - pulseaudio-bluetooth
-    - pavucontrol-qt
-    - pulsemixer
-    - ponymix
+# Should we install bluetooth stuff?
+install_bluetooth: true
 
+# add additional packages to install
+pulseaudio_arch_extra_packages: []
+# - foo
+# - bar
+
+# warn if playbook is executed on different os than arch
+warn_if_role_pulseaudio_is_not_tested_well: true

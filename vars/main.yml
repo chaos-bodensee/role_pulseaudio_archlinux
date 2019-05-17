@@ -1,0 +1,4 @@
+---
+# version contoll
+playbook_version_number: 110
+playbook_version_path: '/etc/ansible-version/role-pulseaudio_chaos-bodensee_github.com.version' 
