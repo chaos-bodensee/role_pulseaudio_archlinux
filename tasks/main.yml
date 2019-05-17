@@ -31,4 +31,4 @@
   package:
     name: "{{ pulseaudio_arch_extra_packages }}"
     state: present
-  when: pulseaudio_arch_extra_packages != ""
+  when: pulseaudio_arch_extra_packages != []
