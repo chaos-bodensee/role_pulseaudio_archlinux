@@ -1,4 +1,4 @@
- Ansible playbook for pulseaudio
+ Ansible role for pulseaudio
 ===========================
 
 This ansible role install some components you need for pulseaudio.
