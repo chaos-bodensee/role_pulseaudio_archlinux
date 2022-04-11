@@ -1,34 +1,37 @@
 ---
-- include_tasks: versioncheck.yml
+- name: run optional versionscheck
+  ansible.builtin.include_tasks: versioncheck.yml
   when: submodules_versioncheck|bool
 
 - name: Warn if not arch linux
-  fail:
+  ansible.builtin.fail:
     msg: "Attention: This role is untested on your distribution. Have a look into the README for more information!"
   when:
-   - ansible_distribution != 'Archlinux'
-   - warn_if_role_pulseaudio_is_not_tested_well|bool
+    - ansible_distribution != 'Archlinux'
+    - warn_if_role_pulseaudio_is_not_tested_well|bool
 
 - name: gather os specific variables
-  include_vars: "{{ ansible_distribution }}.yml"
+  iansible.builtin.include_vars: "{{ ansible_distribution }}.yml"
 
 - name: Install pulseaudio
   become: true
-  package:
+  ansible.builtin.package:
     name: "{{ pulseaudio_os_packages }}"
     state: present
-    update_cache: yes
+    update_cache: true
 
 - name: Install bluetoth support
   become: true
-  package:
+  ansible.builtin.package:
     name: "{{ bluetooth_os_packages }}"
     state: present
   when: install_bluetooth|bool
 
 - name: install extra packages
   become: true
-  package:
+  ansible.builtin.package:
     name: "{{ pulseaudio_arch_extra_packages }}"
     state: present
-  when: pulseaudio_arch_extra_packages != []
+  when:
+    - pulseaudio_arch_extra_packages != []
+    - ansible_distribution == 'Archlinux'
