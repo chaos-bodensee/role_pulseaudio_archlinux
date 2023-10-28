@@ -5,7 +5,8 @@ This ansible role install some components you need for pulseaudio.
 
  WARNING:
 ---------
-Currently this playbook is only used on Archlinux. It will probably require differen package names and maybe driver on other OS.
++ Currently this playbook is only used on Archlinux. It will probably require differen package names and maybe driver on other OS.
++ This role is not maintained anymore and now archived.
 
  Configuration
 --------------
