@@ -3,6 +3,12 @@
   ansible.builtin.include_tasks: versioncheck.yml
   when: submodules_versioncheck|bool
 
+- name: Role no longer maintained
+  ansible.builtin.fail:
+    msg: This role is no longer maintained
+  when: arch_fonts_skip_deprecation_message | default(true) | bool
+
+
 - name: Warn if not arch linux
   ansible.builtin.fail:
     msg: "Attention: This role is untested on your distribution. Have a look into the README for more information!"
